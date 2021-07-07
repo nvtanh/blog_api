@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :v1 do
+    namespace :auth do
+      resources :registration, only: :create
+      resource :sessions, only: [:create, :destroy]
+
+      namespace :passwords do
+        resources :reset, only: :create
+      end
+    end
+  end
 end

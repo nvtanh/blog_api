@@ -28,6 +28,13 @@ gem 'puma', '~> 3.7'
 # App configuration
 gem 'figaro'
 
+gem 'devise'
+
+gem 'dry-validation', '~> 1.6'
+gem 'dry-monads', '~> 1.3', '>= 1.3.5'
+
+gem 'jsonapi-serializer'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -50,9 +57,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem 'ffaker'
 
-  gem 'factory_bot_rails', '~> 6.1'
+  gem 'factory_bot_rails'
 
   gem 'database_cleaner'
 
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
+
+  gem 'jsonapi-rspec'
 end
