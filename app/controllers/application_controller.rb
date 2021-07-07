@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::API
+  include ErrorHandlers
+
   private
 
-  def render_errors(errors, status = :unprocessable_entity)
-    render json: { errors: errors }, status: status
+  def authentication_token
+    request.headers[:authentication]
   end
 end
